@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!-- AOP관련 어노테이션 동작이 가능하게 설정 -->
+<aop:aspectj-autoproxy />
+<!-- 나머지 하위의 모든 AOP 설정이 사라지고 보조업무 객체의 어노테이션으로 대체한다. -->
+
+<!-- 주 업무 객체 -->
+<bean id="memo" class="com.test.memo.Memo"/>
+
+<!-- 보조 업무 객체 -->
+<bean id="logger" class="com.test.memo.Logger"/>
+</beans>
